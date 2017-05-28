@@ -1,0 +1,26 @@
+---
+
+- hosts: "localhost"
+  become: true
+  become_user: "root"
+  roles:
+   - "ansible-role-java"
+   - "geerlingguy.nodejs"
+   - "ocha.yarn"
+   - role: "gantsign.atom"
+     users:
+      - username: "{{ansible_env.SUDO_USER}}"
+        atom_packages:
+         - "atom-beautify"
+         - "atom-html-preview"
+         - "file-icons"
+         - "git-plus"
+         - "project-manager"
+   - role: "FGtatsuro.virtualbox"
+     vars:
+      - virtualbox_distributions_with_newpublickey:
+         - "zesty"
+   - "andrewrothstein.packer"
+   - "FGtatsuro.vagrant"
+
+
