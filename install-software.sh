@@ -2,5 +2,4 @@
 
 cd ansible
 ansible-galaxy install -r requirements.yml
-ansible-playbook developer.yml
-
+ansible-playbook playbooks/developer.yml
