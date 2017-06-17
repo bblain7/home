@@ -4,11 +4,12 @@ This repository installs the following software on a baseline Debian Linux OS.
 
 - Atom Editor
 - Facebook Yarn
+- Google Chrome
 - HashiCorp Packer
 - HashiCorp Vagrant
+- NodeJS
 - OpenJDK Java
 - Oracle Virtualbox
-- NodeJS
 
 #Prerequisites
 

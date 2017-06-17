@@ -5,6 +5,7 @@
   become_user: "root"
   roles:
    - "ansible-role-java"
+   - "cmprescott.chrome"
    - "geerlingguy.nodejs"
    - "ocha.yarn"
    - role: "gantsign.atom"

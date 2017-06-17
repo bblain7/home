@@ -1,29 +1,17 @@
 ---
 
-# OpenJDK Java
-# Using a forked version to fix Ubuntu 17.04 issues
-#
-#- src: "geerlingguy.java"
-- src: "git+https://github.com/bblain7/ansible-role-java.git"
-
-
-# NodeJS
-- src: "geerlingguy.nodejs"
-
-
-# Facebook Yarn
-- src: "ocha.yarn"
 
 
 # Atom Editor
 - src: "gantsign.atom"
 
 
-# Oracle VirtualBox
-# Using a forked version to fix Ubuntu 17.04 issues and performing an
-# 'apt update' once the repo has been added.
-#
-- src: "FGtatsuro.virtualbox"
+# Facebook Yarn
+- src: "ocha.yarn"
+
+
+# Google Chrome
+- src: "cmprescott.chrome"
 
 
 # HashiCorp Packer
@@ -32,3 +20,21 @@
 
 # HashiCorp Vagrant
 - src: "FGtatsuro.vagrant"
+
+
+# NodeJS
+- src: "geerlingguy.nodejs"
+
+
+# OpenJDK Java
+# Using a forked version to fix Ubuntu 17.04 issues
+#
+#- src: "geerlingguy.java"
+- src: "git+https://github.com/bblain7/ansible-role-java.git"
+
+
+# Oracle VirtualBox
+# Using a forked version to fix Ubuntu 17.04 issues and performing an
+# 'apt update' once the repo has been added.
+#
+- src: "FGtatsuro.virtualbox"
