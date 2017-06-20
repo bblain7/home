@@ -58,9 +58,31 @@ ansible --version || {
 # in Ubuntu Zesty Zappas
 vars_dir="${DIR}/ansible/roles/FGtatsuro.virtualbox/vars"
 sudo mkdir -p "${vars_dir}"
-sudo cp -f "${DIR}/patches/FGtatsuro.virtualbox/main.yml" "${vars_dir}"
+sudo cp -f "${DIR}/patches/FGtatsuro.virtualbox/vars/main.yml" "${vars_dir}"
 
-# Also to fix FGtatsuro, update the apt repos
+
+# Copy the defaults/main.yml for andrewrothstein.packer so that it
+# works from the "packer_cleanup" variable.
+# https://github.com/andrewrothstein/ansible-packer/issues/1
+vars_dir="${DIR}/ansible/roles/andrewrothstein.packer/defaults"
+sudo mkdir -p "${vars_dir}"
+sudo cp -f "${DIR}/patches/andrewrothstein.packer/defaults/main.yml" "${vars_dir}"
+
+
+# Chrome fails to update the cache. Have to change the task to a
+# shell command.
+vars_dir="${DIR}/ansible/roles/cmprescott.chrome/tasks"
+sudo mkdir -p "${vars_dir}"
+sudo cp -f "${DIR}/patches/cmprescott.chrome/tasks/setup-apt.yml" "${vars_dir}"
+
+
+# Update ownership for the roles directory since the copy is only
+# giving permissions to root.
+sudo chown -R "${USER}:${USER}" "${DIR}/ansible/roles"
+
+
+# Also to fix FGtatsuro, clean and update the apt repos
+sudo apt clean
 sudo apt update
 
 
@@ -68,7 +90,6 @@ sudo apt update
 # Execute Ansible Playbooks
 # -------------------------------------------------------------------
 
-
 cd ansible
 ansible-galaxy install -r requirements.yml
-ansible-playbook playbooks/developer.yml
+ansible-playbook playbooks/developer.yml --flush-cache
