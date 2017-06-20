@@ -11,7 +11,7 @@ This repository installs the following software on a baseline Debian Linux OS.
 - OpenJDK Java
 - Oracle Virtualbox
 
-#Prerequisites
+# Prerequisites
 
 - Debian Linux OS
 
