@@ -61,14 +61,6 @@ sudo mkdir -p "${vars_dir}"
 sudo cp -f "${DIR}/patches/FGtatsuro.virtualbox/vars/main.yml" "${vars_dir}"
 
 
-# Copy the defaults/main.yml for andrewrothstein.packer so that it
-# works from the "packer_cleanup" variable.
-# https://github.com/andrewrothstein/ansible-packer/issues/1
-vars_dir="${DIR}/ansible/roles/andrewrothstein.packer/defaults"
-sudo mkdir -p "${vars_dir}"
-sudo cp -f "${DIR}/patches/andrewrothstein.packer/defaults/main.yml" "${vars_dir}"
-
-
 # Chrome fails to update the cache. Have to change the task to a
 # shell command.
 vars_dir="${DIR}/ansible/roles/cmprescott.chrome/tasks"
