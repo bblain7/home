@@ -16,6 +16,7 @@
          - "atom-html-preview"
          - "file-icons"
          - "git-plus"
+         - "language-vue"
          - "project-manager"
    - role: "FGtatsuro.virtualbox"
      vars:
