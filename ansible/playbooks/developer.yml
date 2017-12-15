@@ -6,7 +6,9 @@
   roles:
    - "ansible-role-java"
    - "cmprescott.chrome"
-   - "geerlingguy.nodejs"
+   - role: "geerlingguy.nodejs"
+     vars:
+      - nodejs_version: "8.x"
    - "ocha.yarn"
    - role: "gantsign.atom"
      users:
@@ -15,8 +17,12 @@
          - "atom-beautify"
          - "atom-html-preview"
          - "atom-ide-ui"
+         - "autocomplete-modules"
+         - "busy-signal"
+         - "docblockr"
          - "file-icons"
          - "git-plus"
+         - "highlight-selected"
          - "ide-css"
          - "ide-html"
          - "ide-json"
@@ -24,7 +30,9 @@
          - "ide-vue"
          - "ide-yaml"
          - "language-vue"
+         - "minimap"
          - "project-manager"
+         - "sonarlint"
    - role: "FGtatsuro.virtualbox"
      vars:
       - virtualbox_distributions_with_newpublickey:
