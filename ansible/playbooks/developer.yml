@@ -36,7 +36,7 @@
    - role: "FGtatsuro.virtualbox"
      vars:
       - virtualbox_distributions_with_newpublickey:
-         - "zesty"
+         - "artful"
    - "andrewrothstein.packer"
    - "FGtatsuro.vagrant"
 
