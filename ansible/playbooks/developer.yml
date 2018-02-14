@@ -1,43 +1,12 @@
 ---
 
-- hosts: "localhost"
-  become: true
+- hosts:       "localhost"
+  become:      true
   become_user: "root"
   roles:
-   - "ansible-role-java"
-   - "cmprescott.chrome"
-   - role: "geerlingguy.nodejs"
-     vars:
-      - nodejs_version: "8.x"
-   - "ocha.yarn"
-   - role: "gantsign.atom"
-     users:
-      - username: "{{ansible_env.SUDO_USER}}"
-        atom_packages:
-         - "atom-beautify"
-         - "atom-html-preview"
-         - "atom-ide-ui"
-         - "autocomplete-modules"
-         - "busy-signal"
-         - "docblockr"
-         - "file-icons"
-         - "git-plus"
-         - "highlight-selected"
-         - "ide-css"
-         - "ide-html"
-         - "ide-json"
-         - "ide-typescript"
-         - "ide-vue"
-         - "ide-yaml"
-         - "language-vue"
-         - "minimap"
-         - "project-manager"
-         - "sonarlint"
-   - role: "FGtatsuro.virtualbox"
+   - role:     "FGtatsuro.virtualbox"
      vars:
       - virtualbox_distributions_with_newpublickey:
-         - "artful"
+         - "zesty"
    - "andrewrothstein.packer"
    - "FGtatsuro.vagrant"
-
-
