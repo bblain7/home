@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# Automatically ask for sudo if not already root
+if [ $( /usr/bin/id -u ) -ne 0 ]; then
+  exec sudo "$0" "$@"
+fi
+
+#
+# Install Ansible
+# -------------------------------------------------------------------
+
+getAnsibleVersion() {
+  echo "$( ansible --version | awk '/^ansible/ {print $2}' )"
+}
+
+ansibleVersion="$( getAnsibleVersion )"
+if [ -z ${ansibleVersion} ]; then
+  apt-get install software-properties-common -y
+
+  apt-add-repository ppa:ansible/ansible -y
+  apt-get update
+  apt-get install ansible -y
+
+  ansibleVersion="$( getAnsibleVersion )"
+  if [ ! -z ${ansibleVersion} ]; then
+
+    # When run in a script Ansible creates a new directory for temp files but
+    # sets the permissions to root:root. This will change the ownership back
+    # for the user that ran the script.
+    chown -R "${SUDO_USER}:${SUDO_USER}" "${HOME}/.ansible"
+
+    echo "Ansible ${ansibleVersion} successfully installed."
+  else
+    echo "Ansible failed to install."
+    exit 1;
+  fi
+else
+  echo "Ansible ${ansibleVersion} already installed."
+fi
+

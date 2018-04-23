@@ -1,51 +1,47 @@
-# Home Developer Software Installer
+# Desktop Software Installer
 
-This repository installs the following software on a baseline Debian Linux OS.
+This repository installs the following software on my Ubuntu Desktop.
 
-- Atom Editor
+- Atom IDE
 - Facebook Yarn
 - Google Chrome
-- HashiCorp Packer
-- HashiCorp Vagrant
+- Hashicorp Packer
+- Hasicorp Vagrant
+- Microsoft Skype
 - NodeJS
-- OpenJDK Java
-- Oracle Virtualbox
-
-# Prerequisites
-
-- Debian Linux OS
 
 # Usage
 
-The installation script installs Ansible then all the software can be installed via Ansible configuration.
+The installation script installs Ansible then all the software can be installed via Ansible configuration. Run the following script.
 
 ```
-sudo sh install-software.sh
+./install-ansible
 ```
 
-For a completely automated execution of the installation script, configure SSH keys for github.com.
-
-https://help.github.com/articles/connecting-to-github-with-ssh/
-
-
-
-# FIXME
-
-I'm not sure why but the FGtatsuro.virtualbox fails the first time and has to be run twice. I think because the apt repo is not updating correctly. There is also a patch that I'm adding to the script so that it works with Ubuntu Zesty Zappas.
+When the Ansible installation is done, run the Ansible commands to install the rest of the software.
 
 ```
-TASK [FGtatsuro.virtualbox : Run tasks on current environment] **************************************
-included: /home/brian/git/home/ansible/roles/FGtatsuro.virtualbox/tasks/Debian.yml for localhost
+ansible-galaxy install -r requirements.yml
+ansible-playbook playbooks/developer.yml --flush-cache -K
+```
 
-TASK [FGtatsuro.virtualbox : Add key for the repository of VirtualBox] ******************************
-skipping: [localhost]
+# Configurations
 
-TASK [FGtatsuro.virtualbox : Add key for the repository ov VirtualBox(latest distribution)] *********
-changed: [localhost]
+This section just contains a few helpful configurations that are not really worth automating at the moment.
 
-TASK [FGtatsuro.virtualbox : Add the repository of VirtualBox] **************************************
-ok: [localhost]
+## Atom
 
-TASK [FGtatsuro.virtualbox : Install VirtualBox] ****************************************************
-fatal: [localhost]: FAILED! => {"changed": false, "failed": true, "msg": "No package matching 'virtualbox-5.1' is available"}
+- https://discuss.atom.io/t/left-tree-view-pane-how-to-hide-files/29622/2
+- https://discuss.atom.io/t/how-to-stop-atom-from-auto-closing-and-swallowing-braces-and-quotes/2566/7
+- Go through each beautify setting and turn on "format on save" https://atom.io/packages/atom-beautify
+
+## Git
+
+Run the following commands to configure git for the first time. Replace the name and email with your own.
+
+```
+git config --global user.name "name"
+git config --global user.email "email"
+git config --global core.editor "vim"
+git config --global remote.origin.prune true
 ```

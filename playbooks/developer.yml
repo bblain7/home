@@ -4,12 +4,14 @@
   become: true
   become_user: "root"
   roles:
-   - "ansible-role-java"
+   - "andrewrothstein.packer"
+   - "brentwg.vagrant"
    - "cmprescott.chrome"
+   - "mhalano.skypeforlinux"
+   - "ocha.yarn"
    - role: "geerlingguy.nodejs"
      vars:
       - nodejs_version: "8.x"
-   - "ocha.yarn"
    - role: "gantsign.atom"
      users:
       - username: "{{ansible_env.SUDO_USER}}"
@@ -33,11 +35,5 @@
          - "minimap"
          - "project-manager"
          - "sonarlint"
-   - role: "FGtatsuro.virtualbox"
-     vars:
-      - virtualbox_distributions_with_newpublickey:
-         - "artful"
-   - "andrewrothstein.packer"
-   - "FGtatsuro.vagrant"
 
 

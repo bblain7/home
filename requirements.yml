@@ -1,0 +1,29 @@
+---
+
+# Atom IDE
+- src: "gantsign.atom"
+
+
+# Facebook Yarn
+- src: "ocha.yarn"
+
+
+# Google Chrome
+- src: "cmprescott.chrome"
+
+
+# HashiCorp Packer
+- src: "andrewrothstein.packer"
+
+
+# HashiCorp Vagrant
+- src: "brentwg.vagrant"
+
+
+# Microsoft Skype
+- src: "mhalano.skypeforlinux"
+
+
+# NodeJS
+- src: "geerlingguy.nodejs"
+
