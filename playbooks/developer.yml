@@ -9,6 +9,8 @@
    - "cmprescott.chrome"
    - "mhalano.skypeforlinux"
    - "ocha.yarn"
+   - "wtanaka.slack"
+   - "wtanaka.vim"
    - role: "geerlingguy.nodejs"
      vars:
       - nodejs_version: "8.x"
