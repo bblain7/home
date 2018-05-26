@@ -7,10 +7,16 @@
    - "andrewrothstein.packer"
    - "brentwg.vagrant"
    - "cmprescott.chrome"
+   - "gantsign.intellij"
+   - "gantsign.maven"
+   - "geerlingguy.java"
    - "mhalano.skypeforlinux"
    - "ocha.yarn"
    - "wtanaka.slack"
    - "wtanaka.vim"
+   - role: "ANXS.postgresql"
+     vars:
+       - postgresql_version: "10"
    - role: "geerlingguy.nodejs"
      vars:
       - nodejs_version: "8.x"

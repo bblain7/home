@@ -2,13 +2,19 @@
 
 This repository installs the following software on my Ubuntu Desktop.
 
-- Atom IDE
+- Apache Maven
 - Facebook Yarn
+- GitHub Atom IDE
 - Google Chrome
 - Hashicorp Packer
-- Hasicorp Vagrant
+- Hashicorp Vagrant
+- JetBrains IntelliJ IDEA
+- Joyent NodeJS
 - Microsoft Skype
-- NodeJS
+- Oracle OpenJDK
+- PostgreSQL
+- Slack
+- Vim
 
 # Usage
 

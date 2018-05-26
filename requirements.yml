@@ -1,5 +1,9 @@
 ---
 
+# Apache Maven
+- src: "gantsign.maven"
+
+
 # Atom IDE
 - src: "gantsign.atom"
 
@@ -20,12 +24,24 @@
 - src: "brentwg.vagrant"
 
 
+# JetBrains IntelliJ IDEA
+- src: "gantsign.intellij"
+
+
 # Microsoft Skype
 - src: "mhalano.skypeforlinux"
 
 
 # NodeJS
 - src: "geerlingguy.nodejs"
+
+
+# OpenJDK
+- src: "geerlingguy.java"
+
+
+# PostgreSQL
+- src: "ANXS.postgresql"
 
 
 # Slack
